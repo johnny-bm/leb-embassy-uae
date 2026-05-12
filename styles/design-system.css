@@ -86,9 +86,11 @@
   --color-brand-red:         var(--color-red-500);
   --color-brand-white:       #FFFFFF;
 
-  --color-navy:              var(--color-green-700);   /* #004d00 — header/footer bg */
+  --color-navy:              var(--color-green-700);   /* #004d00 — header bg */
   --color-navy-dark:         var(--color-green-800);   /* #003300 — hover */
   --color-navy-light:        var(--color-green-600);   /* #006600 */
+  --color-charcoal:          #1c2128;                  /* footer bg */
+  --color-charcoal-dark:     #13171d;                  /* footer bottom border */
 
   --color-text-primary:      var(--color-gray-800);    /* #1f2937 */
   --color-text-secondary:    var(--color-gray-600);    /* #4b5563 */
@@ -99,7 +101,7 @@
   --color-bg-page:           var(--color-surface-100); /* #f5f5f5 */
   --color-bg-white:          #FFFFFF;
   --color-bg-header:         var(--color-green-700);   /* #004d00 */
-  --color-bg-footer:         var(--color-green-700);   /* #004d00 */
+  --color-bg-footer:         var(--color-charcoal);    /* #1c2128 — neutral dark */
   --color-bg-accent:         var(--color-red-500);     /* #f50000 */
 
   --color-border:            var(--color-gray-200);    /* #e7e9ec */
