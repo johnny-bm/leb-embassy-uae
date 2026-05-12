@@ -2046,7 +2046,20 @@ details[open] > .service-details__summary::after {
 
   /* Quick access — 2 columns on mobile */
   .quick-access__grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .quick-access__tile {
+    min-height: 90px;
+    padding: var(--space-4) var(--space-3);
+    gap: var(--space-2);
+    font-size: var(--font-size-xs);
+  }
+  .quick-access__tile svg {
+    width: 22px;
+    height: 22px;
+  }
+  .quick-access {
+    padding-block: var(--space-6);
   }
 
   /* Delivery compare — stack on mobile */
@@ -2272,7 +2285,7 @@ details[open] > .service-details__summary::after {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-4);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-5);
 }
 
 .quick-access__tile {
@@ -2280,8 +2293,8 @@ details[open] > .service-details__summary::after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
-  padding: var(--space-5) var(--space-4);
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-4);
   background-color: var(--color-gray-100);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -2292,6 +2305,7 @@ details[open] > .service-details__summary::after {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wide);
+  min-height: 110px;
   transition: background-color var(--transition-fast), color var(--transition-fast),
     border-color var(--transition-fast), box-shadow var(--transition-fast),
     transform var(--transition-fast);
@@ -2305,15 +2319,8 @@ details[open] > .service-details__summary::after {
   transform: translateY(-2px);
 }
 
-.quick-access__tile--emergency {
-  border-color: var(--color-brand-red);
-  color: var(--color-brand-red);
-}
-
-.quick-access__tile--emergency:hover {
-  background-color: var(--color-brand-red);
-  border-color: var(--color-brand-red);
-  color: var(--color-text-inverse);
+.quick-access__tile svg {
+  flex-shrink: 0;
 }
 
 .quick-access__hours {
@@ -2322,6 +2329,13 @@ details[open] > .service-details__summary::after {
   font-size: var(--font-size-sm);
   margin: 0;
   max-width: none;
+}
+
+/* Tablet — 2×2 grid */
+@media (max-width: 900px) and (min-width: 481px) {
+  .quick-access__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ==========================================================================
