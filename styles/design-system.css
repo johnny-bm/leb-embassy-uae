@@ -994,7 +994,8 @@ ol.content-list {
 .site-footer {
   background-color: var(--color-bg-footer);
   color: rgba(255, 255, 255, 0.8);
-  padding-block: var(--space-12);
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-4);
 }
 
 .site-footer__grid {
@@ -2312,7 +2313,7 @@ details[open] > .service-details__summary::after {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   text-decoration: none;
-  color: var(--color-navy);
+  color: var(--color-text-primary);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   text-align: center;
@@ -2334,6 +2335,7 @@ details[open] > .service-details__summary::after {
 
 .quick-access__tile svg {
   flex-shrink: 0;
+  color: var(--color-navy);
 }
 
 .quick-access__hours {
