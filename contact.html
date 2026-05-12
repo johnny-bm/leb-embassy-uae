@@ -15,7 +15,7 @@
 <body>
     <!--HEADER-->
 
-    <main>
+    <main id="main">
         <!-- Page Header -->
         <section class="page-header">
             <div class="page-header__inner">
@@ -105,7 +105,7 @@
 
                     <!-- Contact Form -->
                     <div>
-                        <h2 class="page-header__title mb-8">Send Us a Message</h2>
+                        <h2 class="page-header__title mb-8" id="contact-form-heading">Send Us a Message</h2>
 
                         <!-- Success message — shown after form submission via JS -->
                         <div id="form-success" class="alert alert--success mb-6" role="status" aria-live="polite" style="display:none;">
@@ -120,7 +120,7 @@
 
                         <!-- TODO: replace with a server-side form handler once backend/email service is confirmed -->
                         <!-- Currently uses mailto: — opens the user's email client with all fields pre-filled -->
-                        <form id="enquiry-form" class="card card--elevated" novalidate>
+                        <form id="enquiry-form" class="card card--elevated" novalidate aria-labelledby="contact-form-heading">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="name" class="form-label form-label--required">Full Name</label>
