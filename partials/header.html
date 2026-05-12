@@ -1,0 +1,57 @@
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="{{ROOT}}index.html" class="site-header__logo">
+          <div class="site-header__logo-emblem"><img src="{{ROOT}}images/Cedar_flag.svg" alt="Lebanese Cedar"></div>
+        </a>
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+          <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+            <span class="nav-toggle__icon" aria-hidden="true"></span>
+          </button>
+          <ul class="site-nav__list">
+            <li><a href="{{ROOT}}embassy.html" class="site-nav__link" data-nav="embassy">The Embassy</a></li>
+            <li class="site-nav__item--has-dropdown">
+              <a href="{{ROOT}}services.html" class="site-nav__link" data-nav="services">Services</a>
+              <div class="site-nav__dropdown">
+                <ul class="site-nav__dropdown__list">
+                  <li class="site-nav__dropdown__item"><a href="{{ROOT}}service-passports.html" class="site-nav__dropdown__link">Lebanese Passports</a></li>
+                  <li class="site-nav__dropdown__item"><a href="{{ROOT}}service-civil-status.html" class="site-nav__dropdown__link">Civil Status</a></li>
+                  <li class="site-nav__dropdown__item"><a href="{{ROOT}}service-poa.html" class="site-nav__dropdown__link">Power of Attorney</a></li>
+                  <li class="site-nav__dropdown__item"><a href="{{ROOT}}service-certificates.html" class="site-nav__dropdown__link">Certificates &amp; Attestations</a></li>
+                  <li class="site-nav__dropdown__item"><a href="{{ROOT}}service-visa.html" class="site-nav__dropdown__link">Visa</a></li>
+                  <li class="site-nav__dropdown__item"><a href="{{ROOT}}service-palestinian-travel.html" class="site-nav__dropdown__link">Palestinians Travel Document</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="{{ROOT}}business.html" class="site-nav__link" data-nav="business">Business &amp; Trade</a></li>
+            <li><a href="{{ROOT}}news.html" class="site-nav__link" data-nav="news">News</a></li>
+            <li><a href="{{ROOT}}contact.html" class="site-nav__link" data-nav="contact">Contact</a></li>
+          </ul>
+          <a href="{{ROOT}}ar/index.html" class="site-nav__lang-btn" lang="ar" hreflang="ar" aria-label="Switch to Arabic">العربية</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <script>
+    (function () {
+      var path = window.location.pathname.split('/').pop() || 'index.html';
+      var map = {
+        'embassy.html': 'embassy',
+        'services.html': 'services',
+        'service-passports.html': 'services',
+        'service-visa.html': 'services',
+        'service-civil-status.html': 'services',
+        'service-poa.html': 'services',
+        'service-certificates.html': 'services',
+        'service-palestinian-travel.html': 'services',
+        'business.html': 'business',
+        'news.html': 'news',
+        'contact.html': 'contact'
+      };
+      var active = map[path];
+      if (active) {
+        var link = document.querySelector('.site-nav__link[data-nav="' + active + '"]');
+        if (link) { link.classList.add('site-nav__link--active'); link.setAttribute('aria-current', 'page'); }
+      }
+    })();
+  </script>

@@ -1,0 +1,51 @@
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="index.html" class="site-header__logo">
+          <div class="site-header__logo-emblem"><img src="../images/Cedar_flag.svg" alt="الأرز اللبناني"></div>
+        </a>
+        <nav class="site-nav" id="site-nav" aria-label="التنقل الرئيسي">
+          <button class="nav-toggle" aria-label="فتح قائمة التنقل" aria-expanded="false">
+            <span class="nav-toggle__icon" aria-hidden="true"></span>
+          </button>
+          <ul class="site-nav__list">
+            <li><a href="embassy.html" class="site-nav__link" data-nav="embassy">السفارة</a></li>
+            <li class="site-nav__item--has-dropdown">
+              <a href="services.html" class="site-nav__link" data-nav="services">الخدمات</a>
+              <div class="site-nav__dropdown">
+                <ul class="site-nav__dropdown__list">
+                  <li class="site-nav__dropdown__item"><a href="../service-passports.html" class="site-nav__dropdown__link">جوازات السفر اللبنانية</a></li>
+                  <li class="site-nav__dropdown__item"><a href="../service-civil-status.html" class="site-nav__dropdown__link">الأحوال الشخصية</a></li>
+                  <li class="site-nav__dropdown__item"><a href="../service-poa.html" class="site-nav__dropdown__link">التوكيل</a></li>
+                  <li class="site-nav__dropdown__item"><a href="../service-certificates.html" class="site-nav__dropdown__link">الشهادات والتصديقات</a></li>
+                  <li class="site-nav__dropdown__item"><a href="../service-visa.html" class="site-nav__dropdown__link">التأشيرة</a></li>
+                  <li class="site-nav__dropdown__item"><a href="../service-palestinian-travel.html" class="site-nav__dropdown__link">وثائق السفر الفلسطينية</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="business.html" class="site-nav__link" data-nav="business">الأعمال والتجارة</a></li>
+            <li><a href="news.html" class="site-nav__link" data-nav="news">الأخبار</a></li>
+            <li><a href="contact.html" class="site-nav__link" data-nav="contact">اتصل بنا</a></li>
+          </ul>
+          <a href="../index.html" class="site-nav__lang-btn" lang="en" hreflang="en" aria-label="Switch to English">English</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <script>
+    (function () {
+      var path = window.location.pathname.split('/').pop() || 'index.html';
+      var map = {
+        'embassy.html': 'embassy',
+        'services.html': 'services',
+        'business.html': 'business',
+        'news.html': 'news',
+        'contact.html': 'contact'
+      };
+      var active = map[path];
+      if (active) {
+        var link = document.querySelector('.site-nav__link[data-nav="' + active + '"]');
+        if (link) { link.classList.add('site-nav__link--active'); link.setAttribute('aria-current', 'page'); }
+      }
+    })();
+  </script>
