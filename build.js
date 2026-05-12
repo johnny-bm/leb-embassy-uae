@@ -7,10 +7,16 @@ const headerAr = fs.readFileSync('partials/header-ar.html', 'utf8');
 const footerAr = fs.readFileSync('partials/footer-ar.html', 'utf8');
 
 const enFiles = [
-  'index.html', 'embassy.html', 'contact.html', 'business.html',
+  'index.html', 'embassy.html', 'contact.html',
   'news.html', 'services.html', 'service-passports.html', 'service-visa.html',
   'service-civil-status.html', 'service-poa.html', 'service-certificates.html',
   'service-palestinian-travel.html', '_downloads.html'
+];
+
+const businessFiles = [
+  'business/index.html', 'business/bilateral-trade.html',
+  'business/embassy-services.html', 'business/investor-resources.html',
+  'business/useful-links.html'
 ];
 
 const arFiles = [
@@ -40,12 +46,21 @@ function copyDir(src, dest) {
 
 ensureDir('dist');
 ensureDir('dist/ar');
+ensureDir('dist/business');
 
 for (const file of enFiles) {
   if (!fs.existsSync(file)) continue;
   const out = inject(fs.readFileSync(file, 'utf8'), headerEn, footerEn, '');
   fs.writeFileSync(path.join('dist', file), out);
 }
+
+for (const file of businessFiles) {
+  if (!fs.existsSync(file)) continue;
+  const out = inject(fs.readFileSync(file, 'utf8'), headerEn, footerEn, '../');
+  fs.writeFileSync(path.join('dist', file), out);
+}
+
+fs.copyFileSync('business.html', path.join('dist', 'business.html'));
 
 for (const file of arFiles) {
   if (!fs.existsSync(file)) continue;
