@@ -2333,6 +2333,10 @@ details[open] > .service-details__summary::after {
   transform: translateY(-2px);
 }
 
+.quick-access__tile:hover svg {
+  color: var(--color-text-inverse);
+}
+
 .quick-access__tile svg {
   flex-shrink: 0;
   color: var(--color-navy);
