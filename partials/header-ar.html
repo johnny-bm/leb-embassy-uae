@@ -2,33 +2,39 @@
   <header class="site-header" id="site-header">
     <div class="container">
       <div class="site-header__inner">
-        <a href="index.html" class="site-header__logo">
-          <div class="site-header__logo-emblem"><img src="../images/Cedar_flag.svg" alt="الأرز اللبناني"></div>
+        <a href="{{ROOT}}ar/index.html" class="site-header__logo">
+          <img src="{{ROOT}}images/EOLUAE-Logo.svg" alt="سفارة لبنان في الإمارات" class="site-header__logo-img" width="186" height="32">
         </a>
         <nav class="site-nav" id="site-nav" aria-label="التنقل الرئيسي">
           <button class="nav-toggle" aria-label="فتح قائمة التنقل" aria-expanded="false">
             <span class="nav-toggle__icon" aria-hidden="true"></span>
           </button>
           <ul class="site-nav__list">
-            <li><a href="embassy.html" class="site-nav__link" data-nav="embassy">السفارة</a></li>
+            <li><a href="{{ROOT}}ar/embassy.html" class="site-nav__link" data-nav="embassy">السفارة</a></li>
             <li class="site-nav__item--has-dropdown">
-              <a href="services.html" class="site-nav__link" data-nav="services">الخدمات</a>
+              <a href="{{ROOT}}ar/services.html" class="site-nav__link" data-nav="services">الخدمات</a>
               <div class="site-nav__dropdown">
                 <ul class="site-nav__dropdown__list">
-                  <li class="site-nav__dropdown__item"><a href="../service-passports.html" class="site-nav__dropdown__link">جوازات السفر اللبنانية</a></li>
-                  <li class="site-nav__dropdown__item"><a href="../service-civil-status.html" class="site-nav__dropdown__link">الأحوال الشخصية</a></li>
-                  <li class="site-nav__dropdown__item"><a href="../service-poa.html" class="site-nav__dropdown__link">التوكيل</a></li>
-                  <li class="site-nav__dropdown__item"><a href="../service-certificates.html" class="site-nav__dropdown__link">الشهادات والتصديقات</a></li>
-                  <li class="site-nav__dropdown__item"><a href="../service-visa.html" class="site-nav__dropdown__link">التأشيرة</a></li>
-                  <li class="site-nav__dropdown__item"><a href="../service-palestinian-travel.html" class="site-nav__dropdown__link">وثائق السفر الفلسطينية</a></li>
+                  <li class="site-nav__dropdown__item"><a href="{{ROOT}}service-passports.html" class="site-nav__dropdown__link">جوازات السفر اللبنانية</a></li>
+                  <li class="site-nav__dropdown__item"><a href="{{ROOT}}service-civil-status.html" class="site-nav__dropdown__link">الأحوال الشخصية</a></li>
+                  <li class="site-nav__dropdown__item"><a href="{{ROOT}}service-poa.html" class="site-nav__dropdown__link">التوكيل</a></li>
+                  <li class="site-nav__dropdown__item"><a href="{{ROOT}}service-certificates.html" class="site-nav__dropdown__link">الشهادات والتصديقات</a></li>
+                  <li class="site-nav__dropdown__item"><a href="{{ROOT}}service-visa.html" class="site-nav__dropdown__link">التأشيرة</a></li>
+                  <li class="site-nav__dropdown__item"><a href="{{ROOT}}service-palestinian-travel.html" class="site-nav__dropdown__link">وثائق السفر الفلسطينية</a></li>
                 </ul>
               </div>
             </li>
-            <li><a href="business.html" class="site-nav__link" data-nav="business">الأعمال والتجارة</a></li>
-            <li><a href="news.html" class="site-nav__link" data-nav="news">الأخبار</a></li>
-            <li><a href="contact.html" class="site-nav__link" data-nav="contact">اتصل بنا</a></li>
+            <li><a href="{{ROOT}}ar/business.html" class="site-nav__link" data-nav="business">الأعمال والتجارة</a></li>
+            <li><a href="{{ROOT}}ar/news.html" class="site-nav__link" data-nav="news">الأخبار</a></li>
+            <li class="site-nav__mobile-only"><a href="{{ROOT}}ar/contact.html" class="site-nav__link" data-nav="contact">اتصل بنا</a></li>
           </ul>
-          <a href="../index.html" class="site-nav__lang-btn" lang="en" hreflang="en" aria-label="Switch to English">English</a>
+          <div class="site-nav__actions">
+            <select class="site-nav__lang-select" aria-label="اختر اللغة" onchange="window.location.href=this.value" dir="ltr">
+              <option value="{{ROOT}}index.html">EN</option>
+              <option value="{{ROOT}}ar/index.html" selected>AR</option>
+            </select>
+            <a href="{{ROOT}}ar/contact.html" class="btn btn--primary btn--sm site-nav__cta">اتصل بنا</a>
+          </div>
         </nav>
       </div>
     </div>

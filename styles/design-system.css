@@ -222,7 +222,7 @@
   --container-narrow:    800px;
   --container-padding-x: var(--space-6);  /* 24px sides on desktop */
 
-  --header-height:       96px;
+  --header-height:       64px;
   --nav-height:          48px;
 
   /* Z-index scale */
@@ -610,8 +610,9 @@ ol.content-list {
   position: sticky;
   top: 0;
   z-index: var(--z-sticky);
-  background-color: var(--color-bg-header);
-  box-shadow: var(--shadow-header);
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
   height: var(--header-height);
 }
 
@@ -631,9 +632,9 @@ ol.content-list {
 }
 
 .site-header__logo-img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
 .site-header__logo-text {
@@ -669,10 +670,10 @@ ol.content-list {
 }
 
 .site-header__logo-emblem img {
-  height: 64px;
+  height: 40px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 /* Top utility bar (optional — emergency notice strip) */
@@ -819,7 +820,7 @@ ol.content-list {
   padding: var(--space-2) var(--space-3);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-primary);
   text-decoration: none;
   border-radius: var(--radius-md);
   letter-spacing: var(--letter-spacing-wide);
@@ -829,14 +830,14 @@ ol.content-list {
 }
 
 .site-nav__link:hover {
-  color: var(--color-text-inverse);
-  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-navy);
+  background-color: var(--color-gray-100);
 }
 
 .site-nav__link--active,
 .site-nav__link[aria-current="page"] {
   color: var(--color-text-inverse);
-  background-color: var(--color-brand-green);
+  background-color: var(--color-navy);
 }
 
 .site-nav__link:focus-visible {
@@ -858,10 +859,10 @@ ol.content-list {
   align-items: center;
   font-size: var(--font-size-sm);
   font-family: var(--font-family-base);
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-text-primary);
   text-decoration: none;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-sm);
   padding: var(--space-1) var(--space-3);
   cursor: pointer;
@@ -872,13 +873,51 @@ ol.content-list {
 }
 
 .site-nav__lang-btn:hover {
-  color: var(--color-text-inverse);
-  border-color: rgba(255, 255, 255, 0.7);
+  color: var(--color-navy);
+  border-color: var(--color-navy);
 }
 
 .site-nav__lang-btn:focus-visible {
   outline: 2px solid var(--color-focus-ring);
   outline-offset: 2px;
+}
+
+/* Language dropdown (replaces lang-btn) */
+.site-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: var(--space-4);
+  padding-left: var(--space-4);
+  border-left: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.site-nav__lang-select {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.site-nav__lang-select:hover {
+  border-color: var(--color-brand-green);
+}
+
+.site-nav__lang-select:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Mobile-only nav item (Contact shown in mobile dropdown, hidden desktop) */
+.site-nav__mobile-only {
+  display: none;
 }
 
 /* Hamburger toggle button — hidden on desktop */
@@ -888,7 +927,7 @@ ol.content-list {
   border: none;
   cursor: pointer;
   padding: var(--space-2);
-  color: var(--color-text-inverse);
+  color: var(--color-text-primary);
   border-radius: var(--radius-md);
   transition: background-color var(--transition-fast);
 }
@@ -1971,6 +2010,54 @@ details[open] > .service-details__summary::after {
     margin-left: var(--space-2);
   }
 
+  /* Mobile nav actions — hide CTA, shrink separator */
+  .site-nav__cta {
+    display: none;
+  }
+  .site-nav__actions {
+    margin-left: var(--space-2);
+    padding-left: var(--space-2);
+    gap: var(--space-1);
+    border-left-color: var(--color-border);
+  }
+  .site-nav__lang-select {
+    font-size: var(--font-size-xs);
+    padding: 3px 6px;
+  }
+
+  /* Mobile nav list — show Contact item */
+  .site-nav__mobile-only {
+    display: block;
+  }
+
+  /* Mobile nav links — white text on dark dropdown */
+  .site-nav__list .site-nav__link {
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .site-nav__list .site-nav__link:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .site-nav__list .site-nav__link--active,
+  .site-nav__list .site-nav__link[aria-current="page"] {
+    background-color: var(--color-brand-green);
+    color: #ffffff;
+  }
+
+  /* Quick access — 2 columns on mobile */
+  .quick-access__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Delivery compare — stack on mobile */
+  .delivery-compare__grid {
+    grid-template-columns: 1fr;
+  }
+  .delivery-compare__option + .delivery-compare__option {
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+  }
+
   /* Grids — single column */
   .grid-2,
   .grid-3,
@@ -2169,4 +2256,168 @@ details[open] > .service-details__summary::after {
   [dir="rtl"] .hero-section__actions {
     align-items: flex-end;
   }
+}
+
+/* ==========================================================================
+   Section 17: Quick Access Panel
+   ========================================================================== */
+
+.quick-access {
+  background-color: var(--color-bg-white);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--space-8);
+}
+
+.quick-access__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.quick-access__tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-5) var(--space-4);
+  background-color: var(--color-gray-100);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--color-navy);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  transition: background-color var(--transition-fast), color var(--transition-fast),
+    border-color var(--transition-fast), box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.quick-access__tile:hover {
+  background-color: var(--color-navy);
+  color: var(--color-text-inverse);
+  border-color: var(--color-navy);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.quick-access__tile--emergency {
+  border-color: var(--color-brand-red);
+  color: var(--color-brand-red);
+}
+
+.quick-access__tile--emergency:hover {
+  background-color: var(--color-brand-red);
+  border-color: var(--color-brand-red);
+  color: var(--color-text-inverse);
+}
+
+.quick-access__hours {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin: 0;
+  max-width: none;
+}
+
+/* ==========================================================================
+   Section 18: Delivery Options Comparison Panel
+   ========================================================================== */
+
+.delivery-compare {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.delivery-compare__header {
+  background-color: var(--color-navy);
+  color: var(--color-text-inverse);
+  padding: var(--space-4) var(--space-6);
+}
+
+.delivery-compare__header h2 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-inverse);
+  margin: 0;
+}
+
+.delivery-compare__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.delivery-compare__option {
+  padding: var(--space-6);
+  background-color: var(--color-bg-white);
+}
+
+.delivery-compare__option + .delivery-compare__option {
+  border-left: 1px solid var(--color-border);
+  background-color: var(--color-green-50);
+}
+
+.delivery-compare__option h3 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-navy);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.delivery-compare__option + .delivery-compare__option h3 {
+  color: var(--color-brand-green);
+}
+
+.delivery-compare__dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-2) var(--space-4);
+  align-items: baseline;
+  margin: 0;
+}
+
+.delivery-compare__dl dt {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.delivery-compare__dl dd {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Section 19: News dateline & footer hours
+   ========================================================================== */
+
+.news-dateline {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  margin-bottom: var(--space-2);
+}
+
+.site-footer__hours {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  padding-block: 1px;
 }
