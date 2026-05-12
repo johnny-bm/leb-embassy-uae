@@ -1273,15 +1273,15 @@ ol.content-list {
 }
 
 .card-header--navy {
-  background-color: var(--color-charcoal);
-  color: var(--color-text-inverse);
-  border-bottom-color: transparent;
+  background-color: var(--color-gray-100);
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-border);
 }
 
 .card-header--green {
-  background-color: var(--color-charcoal);
-  color: var(--color-text-inverse);
-  border-bottom-color: transparent;
+  background-color: var(--color-gray-100);
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-border);
 }
 
 .card-header__title {
