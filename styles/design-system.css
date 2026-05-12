@@ -1273,13 +1273,13 @@ ol.content-list {
 }
 
 .card-header--navy {
-  background-color: var(--color-navy);
+  background-color: var(--color-charcoal);
   color: var(--color-text-inverse);
   border-bottom-color: transparent;
 }
 
 .card-header--green {
-  background-color: var(--color-brand-green);
+  background-color: var(--color-charcoal);
   color: var(--color-text-inverse);
   border-bottom-color: transparent;
 }
@@ -2347,6 +2347,13 @@ details[open] > .service-details__summary::after {
 @media (max-width: 900px) and (min-width: 481px) {
   .quick-access__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile — single column */
+@media (max-width: 480px) {
+  .quick-access__grid {
+    grid-template-columns: 1fr;
   }
 }
 
