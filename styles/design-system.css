@@ -1628,7 +1628,12 @@ details[open] > .service-details__summary::after {
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-relaxed);
   margin-bottom: var(--space-8);
-  opacity: 0.9;
+  opacity: 1;
+}
+
+.hero-section .hero-section__subtitle,
+.hero-section p.hero-section__subtitle {
+  color: var(--color-text-secondary);
 }
 
 .hero-section__lead {
@@ -1637,7 +1642,12 @@ details[open] > .service-details__summary::after {
   margin-bottom: var(--space-8);
   max-width: 64ch;
   margin-inline: auto;
-  opacity: 0.9;
+  opacity: 1;
+}
+
+.hero-section .hero-section__lead,
+.hero-section p.hero-section__lead {
+  color: var(--color-text-secondary);
 }
 
 .hero-section__actions {
