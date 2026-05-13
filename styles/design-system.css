@@ -1333,6 +1333,31 @@ ol.content-list {
   gap: var(--space-2);
 }
 
+.contact-card-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.emergency-tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-red-50);
+  border: var(--border-width) solid var(--color-red-200);
+  border-top: 2px solid var(--color-brand-red);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.emergency-tab__label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-red-700);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .card-image {
   width: 100%;
   height: auto;
